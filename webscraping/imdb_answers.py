@@ -17,12 +17,12 @@ r_unparsed = r.text
 
 
 # ### now make some Soup using Beautiful Soup and XML parser
-#start = time.time()
+start = time.time()
 b = BeautifulSoup(r_unparsed,'lxml')
-#end = time.time()
-#print end - start
+end = time.time()
+print end - start
 
-print b
+#print b
 
 # ### extract the title and save it into a variable
 ##### you can use some specific methods of Beautiful Soup or follow the tree
@@ -36,10 +36,12 @@ title = b.find_all('title')
 print(title)
 
 # ### extract the description and save it into a variable
-# ### extract the Rating eg: R and save into a variable
+
 
 desc = b.find('div','summary_text').text.strip()
-# print(desc)
+print(desc)
+
+# ### extract the Rating eg: R and save into a variable
 
 #print b.find('div','subtext').text.strip()[0:2]
 
