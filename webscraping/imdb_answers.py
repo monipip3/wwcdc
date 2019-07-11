@@ -3,6 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import time
 #import this package if you have encoding errors
 # import sys
 # sys.setdefaultencoding('utf8')
@@ -20,7 +21,7 @@ r_unparsed = r.text
 start = time.time()
 b = BeautifulSoup(r_unparsed,'lxml')
 end = time.time()
-print end - start
+print(end - start)
 
 #print b
 
@@ -73,7 +74,7 @@ def directors(x):
 		directors_list.append(str(director['name']))
 	return directors_list
 
-print directors(b)
+print(directors(b))
 
 
 # ## create a function that extracts this information of any IMDB movie of your choosing
