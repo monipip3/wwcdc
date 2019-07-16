@@ -3,6 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import time
 #import this package if you have encoding errors
 # import sys
 # sys.setdefaultencoding('utf8')
@@ -20,7 +21,7 @@ r_unparsed = r.text
 start = time.time()
 b = BeautifulSoup(r_unparsed,'lxml')
 end = time.time()
-print end - start
+print(end - start)
 
 #print b
 
@@ -66,14 +67,6 @@ def actors(x):
 		actors_list.append(str(actor['name']))
 	return actors_list
 
-def directors(x):
-	directors = json.loads(x.find('script', type='application/ld+json').text)['director']
-	directors_list = []
-	for director in directors:
-		directors_list.append(str(director['name']))
-	return directors_list
-
-print directors(b)
 
 
 # ## create a function that extracts this information of any IMDB movie of your choosing
@@ -92,4 +85,12 @@ def movie_info(id):
 	return movie_dict
 
 Adrift = movie_info('tt6306064')
+#df = json_normalize(Adrift['tt6306064'])
+#df.to_csv("~/Desktop/adrift.csv")
+
 print(Adrift)
+
+
+
+
+
