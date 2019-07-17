@@ -4,9 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from bs4 import UnicodeDammit
+
 #import this package if you have encoding errors
-# import sys
-# sys.setdefaultencoding('utf8')
+#import sys
+#sys.setdefaultencoding('utf8')
 
 
 ### extract the HTML into text 
@@ -36,6 +38,8 @@ print(title)
 title = b.find_all('title')
 print(title)
 
+#print.b.h1.text
+#print(UnicodeDammit(b.h1.text).unicode_markup)
 # ### extract the description and save it into a variable
 
 
